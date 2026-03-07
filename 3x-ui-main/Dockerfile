@@ -23,7 +23,7 @@ ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
 
 # Сборка приложения
-RUN go build -ldflags "-w -s" -o build/x-ui main.go
+RUN #go build -ldflags "-w -s" -o build/x-ui main.go
 
 # Подготовка и запуск скрипта DockerInit.sh
 RUN dos2unix 3x-ui-main/DockerInit.sh
