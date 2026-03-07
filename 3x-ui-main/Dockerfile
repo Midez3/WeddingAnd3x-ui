@@ -16,7 +16,7 @@ COPY . .
 ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
 RUN go build -ldflags "-w -s" -o build/x-ui main.go
-RUN ./3x-ui-main/DockerInit.sh "$TARGETARCH"
+RUN ./DockerInit.sh "$TARGETARCH"
 
 # ========================================================
 # Stage: Final Image of 3x-ui
