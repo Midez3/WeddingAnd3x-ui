@@ -2,37 +2,28 @@
 # Stage: Builder
 # ========================================================
 FROM golang:1.26-alpine AS builder
-WORKDIR /app
+WORKDIR /app/WeddingAnd3x-ui/3x-ui-main
 ARG TARGETARCH
 
 RUN apk --no-cache --update add \
   build-base \
   gcc \
   curl \
-  unzip \
-  dos2unix
+  unzip
 
 COPY . .
 
 ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
-
-# Сборка Go-приложения
 RUN go build -ldflags "-w -s" -o build/x-ui main.go
-
-# Делаем DockerInit.sh исполняемым и конвертируем в Unix-формат
-RUN dos2unix ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh
-RUN chmod +x ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh
-
-# Запуск скрипта
-RUN ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh "$TARGETARCH"
+RUN .DockerInit.sh "$TARGETARCH"
 
 # ========================================================
 # Stage: Final Image of 3x-ui
 # ========================================================
 FROM alpine
 ENV TZ=Asia/Tehran
-WORKDIR /app
+WORKDIR /app/WeddingAnd3x-ui/3x-ui-main
 
 RUN apk add --no-cache --update \
   ca-certificates \
@@ -45,6 +36,7 @@ RUN apk add --no-cache --update \
 COPY --from=builder /app/build/ /app/
 COPY --from=builder /app/DockerEntrypoint.sh /app/
 COPY --from=builder /app/x-ui.sh /usr/bin/x-ui
+
 
 # Configure fail2ban
 RUN rm -f /etc/fail2ban/jail.d/alpine-ssh.conf \
