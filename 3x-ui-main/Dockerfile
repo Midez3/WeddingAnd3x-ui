@@ -9,13 +9,22 @@ RUN apk --no-cache --update add \
   build-base \
   gcc \
   curl \
-  unzip
+  unzip \
+  dos2unix
 
 COPY . .
 
 ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
+
+# Сборка Go-приложения
 RUN go build -ldflags "-w -s" -o build/x-ui main.go
+
+# Делаем DockerInit.sh исполняемым и конвертируем в Unix-формат
+RUN dos2unix ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh
+RUN chmod +x ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh
+
+# Запуск скрипта
 RUN ./WeddingAnd3x-ui/3x-ui-main/DockerInit.sh "$TARGETARCH"
 
 # ========================================================
@@ -36,7 +45,6 @@ RUN apk add --no-cache --update \
 COPY --from=builder /app/build/ /app/
 COPY --from=builder /app/DockerEntrypoint.sh /app/
 COPY --from=builder /app/x-ui.sh /usr/bin/x-ui
-
 
 # Configure fail2ban
 RUN rm -f /etc/fail2ban/jail.d/alpine-ssh.conf \
