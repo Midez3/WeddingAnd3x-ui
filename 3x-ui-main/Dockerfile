@@ -61,4 +61,4 @@ EXPOSE 2053
 VOLUME ["/etc/x-ui"]
 
 ENTRYPOINT ["/app/DockerEntrypoint.sh"]
-CMD ["./x-ui"]
+CMD ["sh","-c","cd /app && ./x-ui"]
