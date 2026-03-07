@@ -6,27 +6,35 @@ ARG TARGETARCH
 
 WORKDIR /app
 
-RUN apk --no-cache add \
+RUN apk add --no-cache \
     build-base \
     gcc \
     curl \
     unzip \
-    dos2unix
+    dos2unix \
+    git
 
-COPY . /app
+# Сначала копируем только go.mod и go.sum для кеширования зависимостей
+COPY 3x-ui-main/go.mod 3x-ui-main/go.sum ./3x-ui-main/
 
-# Переходим в папку исходников
 WORKDIR /app/3x-ui-main
+
+# Скачиваем зависимости (этот слой будет кешироваться)
+RUN go mod download
+
+# Теперь копируем весь исходный код
+COPY 3x-ui-main/ .
 
 ENV CGO_ENABLED=1
 ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
 
-RUN go build -ldflags "-w -s" -o /app/build/x-ui main.go
+# Сборка бинарника
+RUN go build -ldflags "-w -s" -o /app/x-ui main.go
 
-RUN dos2unix DockerInit.sh
-RUN chmod +x DockerInit.sh
-RUN ./DockerInit.sh "$TARGETARCH"
-
+# Подготовка init скрипта
+RUN dos2unix DockerInit.sh && \
+    chmod +x DockerInit.sh && \
+    ./DockerInit.sh "$TARGETARCH"
 
 # ========================================================
 # Stage: Final Image
@@ -44,14 +52,22 @@ RUN apk add --no-cache \
     curl \
     openssl
 
-COPY --from=builder /app/build/ /app/
+# Копируем бинарник и скрипты
+COPY --from=builder /app/x-ui /app/x-ui
 COPY --from=builder /app/3x-ui-main/DockerEntrypoint.sh /app/
 COPY --from=builder /app/3x-ui-main/x-ui.sh /usr/bin/x-ui
 
 RUN chmod +x \
-    /app/DockerEntrypoint.sh \
     /app/x-ui \
+    /app/DockerEntrypoint.sh \
     /usr/bin/x-ui
+
+# Настройка fail2ban
+RUN rm -f /etc/fail2ban/jail.d/alpine-ssh.conf \
+    && cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local \
+    && sed -i "s/^\[ssh\]$/&\nenabled = false/" /etc/fail2ban/jail.local \
+    && sed -i "s/^\[sshd\]$/&\nenabled = false/" /etc/fail2ban/jail.local \
+    && sed -i "s/#allowipv6 = auto/allowipv6 = auto/g" /etc/fail2ban/fail2ban.conf
 
 ENV XUI_ENABLE_FAIL2BAN="true"
 
