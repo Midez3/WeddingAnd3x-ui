@@ -1,3 +1,39 @@
+# ========================================================
+# Stage: Builder
+# ========================================================
+FROM golang:1.26-alpine AS builder
+ARG TARGETARCH
+
+WORKDIR /app
+
+RUN apk add --no-cache \
+    build-base \
+    gcc \
+    curl \
+    unzip \
+    dos2unix \
+    git
+
+# кешируем зависимости
+COPY go.mod go.sum ./
+RUN go mod download
+
+# копируем весь проект
+COPY . .
+
+ENV CGO_ENABLED=1
+ENV CGO_CFLAGS="-D_LARGEFILE64_SOURCE"
+
+RUN go build -ldflags "-w -s" -o /app/x-ui main.go
+
+RUN dos2unix DockerInit.sh && \
+    chmod +x DockerInit.sh && \
+    ./DockerInit.sh "$TARGETARCH"
+
+
+# ========================================================
+# Final image
+# ========================================================
 FROM alpine
 
 ENV TZ=Asia/Tehran
