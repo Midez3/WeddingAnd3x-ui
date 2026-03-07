@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
 
   nginx:
@@ -11,32 +13,36 @@ services:
       - frontend
     networks:
       - app_network
+    restart: unless-stopped
+
 
   frontend:
     build:
       context: ./wedding.frontend
-      dockerfile: ./Dockerfile
-    restart: always
+      dockerfile: Dockerfile
+    restart: unless-stopped
     expose:
       - "9090"
     networks:
       - app_network
 
+
   3xui:
     build:
       context: ./3x-ui-main
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     container_name: 3xui_app
-    # hostname: yourhostname <- optional
     volumes:
-      - $PWD/db/:/etc/x-ui/
-      - $PWD/cert/:/root/cert/
+      - ./db:/etc/x-ui
+      - ./cert:/root/cert
     environment:
       XRAY_VMESS_AEAD_FORCED: "false"
       XUI_ENABLE_FAIL2BAN: "true"
-    tty: true
     network_mode: host
     restart: unless-stopped
+    tty: true
+
 
 networks:
   app_network:
+    driver: bridge
