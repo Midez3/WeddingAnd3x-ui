@@ -1,0 +1,1221 @@
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Infant', serif;
+    overflow-x: hidden;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.content {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.block {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.textLine {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* Навигационное меню */
+.mymenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.mynav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mynav a {
+    text-decoration: none;
+    color: rgb(132, 137, 117);
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.mynav a:hover {
+    color: #fff;
+    background: rgb(132, 137, 117);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(132, 137, 117, 0.3);
+}
+
+.mynav a i {
+    margin-right: 8px;
+}
+
+/* =================== Главный экран =================== */
+.element6 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: right center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 5% 50px;
+    overflow: hidden;
+}
+
+/* Контейнер для изображения и текста рядом */
+.element6_info {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 10px auto; /* Отступы сверху/снизу 10px, авто по бокам */
+    gap: 30px; /* Уменьшенный gap между элементами */
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* Внутренние отступы контейнера */
+}
+
+/* Изображение свадебной таблички */
+.plate_box {
+    flex: 0 0 45%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.element1 {
+    width: 90%;
+    height: auto;
+    display: block;
+    border-radius:10px;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+    transition: transform 0.5s ease;
+}
+
+.element1:hover {
+    transform: scale(1.02);
+}
+
+/* Текстовый контент (рядом с изображением) */
+.element_txt {
+    flex: 0 0 45%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+.textLine {
+    margin: 10px 0;
+    transition: opacity 0.3s ease;
+}
+
+.wedding-date {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.groom-name, .bride-name {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    margin: 20px 0;
+}
+
+.groom-name {
+    margin-top: 10px;
+}
+
+.bride-name {
+    margin-bottom: 10px;
+}
+
+.invitation-text, .together-text {
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin: 25px 0;
+}
+
+.wedding-time {
+    font-size: 22px;
+    opacity: 0.9;
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+/* Таймер обратного отсчета (под текстом) */
+.countdown-container {
+    /*margin-top: 40px;*/
+    text-align: center;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 40px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.time-unit .number {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.time-unit .label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Градиент для лучшей читаемости текста */
+.element_txt::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.2) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* =================== Адаптивность =================== */
+@media (max-width: 1200px) {
+    .element6_info {
+        gap: 40px;
+        width: 95%;
+    }
+
+    .plate_box, .element_txt {
+        flex: 0 0 48%;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 992px) {
+    .element6 {
+        padding: 70px 4% 40px;
+        background-position: 80% center;
+    }
+
+    .element6_info {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+    }
+
+    .plate_box, .element_txt {
+        flex: 0 0 100%;
+        max-width: 80%;
+    }
+
+    .plate_box {
+        order: 1;
+    }
+
+    .element_txt {
+        order: 2;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 40px;
+    }
+
+    .invitation-text, .together-text {
+        font-size: 18px;
+    }
+
+    .wedding-date {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .element6 {
+        padding: 60px 20px 30px;
+        background-position: 70% center;
+        background-attachment: scroll; /* Отключаем фиксированный фон */
+        min-height: auto;
+    }
+
+    .plate_box, .element_txt {
+        max-width: 90%;
+    }
+
+    .plate_box {
+        margin-bottom: 20px;
+    }
+
+    .element_txt {
+        background: rgba(255, 255, 255, 0.85);
+        padding: 25px;
+        border-radius: 15px;
+        color: #333;
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+    }
+
+    .element_txt::before {
+        display: none; /* Убираем градиент на мобильных */
+    }
+
+    .groom-name, .bride-name {
+        font-size: 36px;
+    }
+
+    .invitation-text, .together-text {
+        font-size: 16px;
+    }
+
+    .wedding-date {
+        font-size: 26px;
+    }
+
+    .wedding-time {
+        font-size: 20px;
+    }
+
+    .countdown-box {
+        background: rgba(139, 69, 19, 0.15); /* Более темный для мобильных */
+        padding: 15px 30px;
+    }
+
+    .countdown-timer {
+        gap: 15px;
+    }
+
+    .time-unit {
+        min-width: 60px;
+    }
+
+    .time-unit .number {
+        font-size: 28px;
+        color: #333;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .time-unit .label {
+        color: rgba(51, 51, 51, 0.9);
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .element6 {
+        padding: 50px 15px 20px;
+        background-position: 60% center;
+    }
+
+    .plate_box, .element_txt {
+        max-width: 95%;
+    }
+
+    .element_txt {
+        padding: 20px;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 32px;
+    }
+
+    .wedding-date {
+        font-size: 24px;
+    }
+
+    .invitation-text, .together-text {
+        font-size: 15px;
+    }
+
+    .wedding-time {
+        font-size: 18px;
+    }
+
+    .countdown-timer {
+        gap: 10px;
+    }
+
+    .time-unit {
+        min-width: 50px;
+    }
+
+    .time-unit .number {
+        font-size: 24px;
+    }
+
+    .countdown-box {
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .element6 {
+        padding: 40px 10px 15px;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 28px;
+    }
+
+    .wedding-date {
+        font-size: 22px;
+    }
+
+    .invitation-text, .together-text {
+        font-size: 14px;
+    }
+
+    .countdown-timer {
+        gap: 8px;
+    }
+
+    .time-unit {
+        min-width: 45px;
+    }
+
+    .time-unit .number {
+        font-size: 20px;
+    }
+
+    .time-unit .label {
+        font-size: 11px;
+    }
+}
+
+/* Анимации для плавного появления */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Анимация для изображения */
+.plate_box {
+    animation: fadeInLeft 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+/* Анимация для текста */
+.element_txt > * {
+    animation: fadeInUp 1.8s ease forwards;
+    opacity: 0;
+}
+
+.element_txt > *:nth-child(1) { animation-delay: 0.4s; }
+.element_txt > *:nth-child(2) { animation-delay: 0.5s; }
+.element_txt > *:nth-child(3) { animation-delay: 0.6s; }
+.element_txt > *:nth-child(4) { animation-delay: 0.7s; }
+.element_txt > *:nth-child(5) { animation-delay: 0.8s; }
+.element_txt > *:nth-child(6) { animation-delay: 0.9s; }
+
+/* Анимация для таймера */
+.countdown-container {
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+/* На мобильных меняем анимации */
+@media (max-width: 992px) {
+    .plate_box {
+        animation: fadeInUp 1s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .element_txt > *:nth-child(1) { animation-delay: 0.3s; }
+    .element_txt > *:nth-child(2) { animation-delay: 0.4s; }
+    .element_txt > *:nth-child(3) { animation-delay: 0.5s; }
+    .element_txt > *:nth-child(4) { animation-delay: 0.6s; }
+    .element_txt > *:nth-child(5) { animation-delay: 0.7s; }
+    .element_txt > *:nth-child(6) { animation-delay: 0.8s; }
+
+    .countdown-container {
+        animation-delay: 0.9s;
+    }
+}
+
+/* Дополнительные стили для улучшения UX */
+.textLine:hover {
+    opacity: 0.9;
+}
+
+/* Затемнение для фона вокруг текста на светлых изображениях */
+.element_txt {
+    position: relative;
+}
+
+.element_txt::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .element_txt::after {
+        background: rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Основное приглашение */
+#myinv {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.element8 {
+    background: white;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #black;
+}
+
+.waiting-text {
+    font-size: 28px;
+    margin: 40px 0;
+    color: #2c3e50;
+}
+
+.waiting-text .highlight {
+    color: #8b4513;
+    font-weight: 700;
+}
+
+/* Фотографии */
+.photos-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.photo-item {
+    text-align: center;
+}
+
+.photo-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f0e6d2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+.photo-name {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Информационные секции */
+.info-sections {
+    margin-top: 60px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+}
+
+.info-section h3 {
+    font-size: 24px;
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+.info-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
+}
+
+.cloud-link {
+    color: #8b4513;
+    text-decoration: none;
+    border-bottom: 1px dotted #8b4513;
+    transition: color 0.3s;
+}
+
+.cloud-link:hover {
+    color: #a0522d;
+    border-bottom: 1px solid #a0522d;
+}
+
+/* Палитра цветов */
+.color-palette {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.color-palette p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+/* Кнопка подтверждения */
+.confirmation-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 2px dashed #ddd;
+}
+
+.guestAgree {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+}
+
+.guestAgree:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+}
+
+/* Расписание */
+#timetable {
+    padding: 80px 20px;
+    background: #f0f0f0;
+}
+
+.timetable-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.events-container {
+    margin-top: 40px;
+}
+
+.event-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.event-time {
+    min-width: 120px;
+    text-align: center;
+    padding: 15px;
+    background: #bfcfba;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-time .time {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+}
+
+.event-time .date {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h4 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.event-location {
+    color: #8b4513;
+    font-size: 16px;
+    /*margin-bottom: 15px;*/
+    font-weight: 600;
+}
+
+.event-description {
+    color: black;
+    line-height: 1.6;
+}
+
+/* Опрос */
+#opros {
+    padding: 80px 20px;
+    background: white;
+}
+
+.survey-intro {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.survey-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question-item {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border-left: 4px solid #8b4513;
+}
+
+.question-item h4 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.option:hover {
+    background: #f0f0f0;
+    border-color: #8b4513;
+}
+
+.option input {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+}
+
+.option .checkmark {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #8b4513;
+    border-radius: 3px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.option input:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #8b4513;
+    font-weight: bold;
+}
+
+.submit-survey {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 40px auto 0;
+    display: block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
+}
+
+.submit-survey:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.4);
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+/* Подвал */
+#footer {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.couple-names {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.wedding-date-footer {
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.copyright {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.calendar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid white;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.calendar-link:hover {
+    background: white;
+    color: #8b4513;
+}
+
+/* Модальное окно */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.modal-header h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    font-family: 'Comfortaa', cursive;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #8b4513;
+    margin-bottom: 25px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.modal-body p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-note {
+    font-size: 16px;
+    color: #888;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.modal-note a {
+    color: #8b4513;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.modal-note a:hover {
+    text-decoration: underline;
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.modal-close-btn {
+    background: #8b4513;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .mynav {
+        gap: 10px;
+        padding: 0 15px;
+    }
+
+    .mynav a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .element_txt {
+        width: 95%;
+    }
+
+    .wedding-date {
+        font-size: 24px;
+    }
+
+    .groom-name, .bride-name {
+        font-size: 36px;
+    }
+
+    .invitation-text, .together-text {
+        font-size: 18px;
+    }
+
+    .countdown-timer {
+        gap: 15px;
+    }
+
+    .time-unit .number {
+        font-size: 28px;
+    }
+
+    .time-unit {
+        min-width: 60px;
+    }
+
+    .element8 {
+        padding: 30px 20px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .event-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .event-time {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .photos-container {
+        gap: 30px;
+    }
+
+    .photo-item img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .mynav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .element_txt {
+        width: 98%;
+    }
+
+    .textLine {
+        font-size: 90% !important;
+        padding: 5px 0;
+    }
+
+    .countdown-timer {
+        gap: 10px;
+    }
+
+    .time-unit .number {
+        font-size: 22px;
+    }
+
+    .time-unit .label {
+        font-size: 12px;
+    }
+
+    .element8 {
+        padding: 20px 15px;
+    }
+
+    .photo-item img {
+        width: 120px;
+        height: 120px;
+    }
+}

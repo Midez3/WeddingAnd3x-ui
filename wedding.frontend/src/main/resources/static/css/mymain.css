@@ -1,0 +1,191 @@
+/* =================== Главный экран =================== */
+.element6 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('../picture/upl7362.png');
+    background-size: cover;
+    background-position: right center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 5% 50px;
+    overflow: hidden;
+}
+
+/* Контейнер для изображения и текста рядом */
+.element6_info {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1400px;
+    margin: 10px auto;
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+/* Изображение свадебной таблички */
+.plate_box {
+    flex: 0 0 45%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+}
+
+.element1 {
+    width: 90%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.3));
+    transition: transform 0.5s ease;
+}
+
+.element1:hover {
+    transform: scale(1.02);
+}
+
+/* Текстовый контент (рядом с изображением) */
+.element_txt {
+    flex: 0 0 45%;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+.wedding-date {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.groom-name, .bride-name {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    margin: 20px 0;
+}
+
+.groom-name {
+    margin-top: 10px;
+}
+
+.bride-name {
+    margin-bottom: 10px;
+}
+
+.invitation-text, .together-text {
+    font-size: 20px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin: 25px 0;
+}
+
+.wedding-time {
+    font-size: 22px;
+    opacity: 0.9;
+    margin: 30px 0;
+    letter-spacing: 1px;
+}
+
+/* Таймер обратного отсчета (под текстом) */
+.countdown-container {
+    text-align: center;
+    width:100%;`
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.time-unit .number {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.time-unit .label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Градиент для лучшей читаемости текста */
+.element_txt::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0.2) 0%,
+        transparent 70%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Затемнение для фона вокруг текста на светлых изображениях */
+.element_txt {
+    position: relative;
+}
+
+.element_txt::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Дополнительные стили для улучшения UX */
+.textLine:hover {
+    opacity: 0.9;
+}
+
+.textLine {
+    margin: 10px 0;
+    transition: opacity 0.3s ease;
+}

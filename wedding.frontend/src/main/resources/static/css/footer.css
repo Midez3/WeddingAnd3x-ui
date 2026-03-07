@@ -1,0 +1,49 @@
+/* Подвал */
+#footer {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.couple-names {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.wedding-date-footer {
+    font-size: 24px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.copyright {
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.calendar-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border: 2px solid white;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.calendar-link:hover {
+    background: white;
+    color: #8b4513;
+}

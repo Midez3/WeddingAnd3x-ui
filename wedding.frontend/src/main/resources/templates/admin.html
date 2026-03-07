@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Администрирование</title>
+    <link rel="stylesheet" href="css/admin.css">
+<!--    <link rel="stylesheet" href="css/modal.css">-->
+</head>
+<body>
+<div class="container">
+    <h1>Администрирование</h1>
+
+    <section>
+        <h2>Список гостей</h2>
+        <table id="guestTable">
+            <thead>
+            <tr>
+                <th>Guest ID</th>
+                <th>Гость</th>
+                <th>Сопровождение</th>
+                <th>Статус приглашения</th>
+                <th>Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Сюда будут рендериться гости -->
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Расписание событий</h2>
+        <table id="eventsTable">
+            <thead>
+            <tr>
+                <th>Order</th>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Название</th>
+                <th>Локация</th>
+                <th>Описание</th>
+                <th>Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Сюда будут рендериться события -->
+            </tbody>
+        </table>
+
+        <button id="addEventBtn">Добавить событие</button>
+    </section>
+</div>
+<!-- Модальное окно для редактирования гостя -->
+<div id="guestModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeGuestModal">&times;</span>
+        <h3>Редактировать гостя</h3>
+        <form id="guestForm">
+            <input type="hidden" id="guestId">
+            <label>Гость:</label>
+            <input type="text" id="guestName" required>
+            <label>Сопровождение:</label>
+            <input type="text" id="guestCompanion">
+            <label>Статус приглашения:</label>
+            <select id="guestStatus">
+                <option value="pending">Ожидает</option>
+                <option value="confirmed">Подтверждено</option>
+                <option value="declined">Отказ</option>
+            </select>
+            <button type="submit">Сохранить</button>
+        </form>
+        <div class="invite-buttons">
+            <button id="generateInviteBtn">Сформировать приглашение</button>
+            <button id="getInviteBtn">Получить приглашение</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для редактирования гостя -->
+<div id="guestModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeGuestModal">&times;</span>
+        <h3>Редактировать гостя</h3>
+        <form id="guestForm">
+            <input type="hidden" id="guestId">
+            <label>Гость:</label>
+            <input type="text" id="guestName" required>
+            <label>Сопровождение:</label>
+            <input type="text" id="guestCompanion">
+            <label>Статус приглашения:</label>
+            <select id="guestStatus">
+                <option value="pending">Ожидает</option>
+                <option value="confirmed">Подтверждено</option>
+                <option value="declined">Отказ</option>
+            </select>
+            <button type="submit">Сохранить</button>
+        </form>
+        <div class="invite-buttons">
+            <button id="generatePdfBtn">Сформировать приглашение</button>
+            <button id="getInviteBtn">Получить приглашение</button>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для редактирования события -->
+<div id="eventModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeEventModal">&times;</span>
+        <h3>Редактировать событие</h3>
+        <form id="eventForm">
+            <input type="hidden" id="eventId">
+            <label>Дата:</label>
+            <input type="date" id="eventDate" required>
+            <label>Время:</label>
+            <input type="time" id="eventTime" required>
+            <label>Название:</label>
+            <input type="text" id="eventTitle" required>
+            <label>Локация:</label>
+            <input type="text" id="eventLocation">
+            <label>Описание:</label>
+            <textarea id="eventDescription"></textarea>
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="module" src="./js/admin.js"></script>
+</body>
+</html>

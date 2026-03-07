@@ -1,0 +1,181 @@
+/* Основное приглашение */
+#myinv {
+    padding: 80px 20px;
+    background: #f8f8f8;
+}
+
+.element8 {
+    background: white;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 0 auto;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.section-title {
+    font-size: 42px;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: black;
+}
+
+.waiting-text {
+    font-size: 28px;
+    margin: 40px 0;
+    color: #2c3e50;
+}
+
+.waiting-text .highlight {
+    color: #8b4513;
+    font-weight: 700;
+}
+
+/* Фотографии */
+.photos-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.photo-item {
+    text-align: center;
+}
+
+.photo-item img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f0e6d2;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+    transform: scale(1.05);
+}
+
+.photo-name {
+    margin-top: 15px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Информационные секции */
+.info-sections {
+    margin-top: 60px;
+}
+
+.info-section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.info-section:last-child {
+    border-bottom: none;
+}
+
+.info-section h3 {
+    font-size: 24px;
+    color: #8b4513;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+}
+
+.info-section p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
+}
+
+.cloud-link {
+    color: #8b4513;
+    text-decoration: none;
+    border-bottom: 1px dotted #8b4513;
+    transition: color 0.3s;
+}
+
+.cloud-link:hover {
+    color: #a0522d;
+    border-bottom: 1px solid #a0522d;
+}
+
+/* Палитра цветов */
+.color-palette {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.color-palette p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.colors {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+/* Кнопка подтверждения */
+.confirmation-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 2px dashed #ddd;
+}
+
+.guestAgree {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.3);
+}
+
+.guestAgree:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.4);
+    background: linear-gradient(135deg, #a0522d 0%, #8b4513 100%);
+}

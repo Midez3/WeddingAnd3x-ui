@@ -1,0 +1,166 @@
+/* Модальное окно */
+.modal {
+    display: flex;                 /* ← ВАЖНО */
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 90%;
+    animation: slideUp 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.modal-header h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    font-family: 'Comfortaa', cursive;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #8b4513;
+    margin-bottom: 25px;
+    animation: pulse 1.5s infinite;
+}
+
+.modal-body p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.modal-note {
+    font-size: 16px;
+    color: #888;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.modal-note a {
+    color: #8b4513;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.modal-note a:hover {
+    text-decoration: underline;
+}
+
+.modal-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.modal-close-btn {
+    background: #8b4513;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: #a0522d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+/* ----------------- Социальные ссылки ----------------- */
+.social-block {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.social-section .social-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+/* Жених — синие цвета */
+.groom .social.telegram { background: #3498db; }
+.groom .social.vk       { background: #2980b9; }
+.groom .social.insta    { background: #3f51b5; }
+
+/* Невеста — розовые цвета */
+.bride .social.telegram { background: #e91e63; }
+.bride .social.vk       { background: #d81b60; }
+.bride .social.insta    { background: #ec407a; }
+
+/* Наведение */
+.social:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}

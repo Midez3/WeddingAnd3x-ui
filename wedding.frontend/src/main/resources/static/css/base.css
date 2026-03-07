@@ -1,0 +1,36 @@
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cormorant Infant', serif;
+    overflow-x: hidden;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.content {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.block {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.textLine {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.clearfix {
+    clear: both;
+}

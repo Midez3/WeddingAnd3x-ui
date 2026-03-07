@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу - Иван & Ольга (17.07.2026)</title>
+
+    <!-- Мета-теги для соцсетей -->
+    <meta property="og:title" content="Приглашение на свадьбу - Иван & Ольга (17.07.2026)">
+    <meta property="og:description" content="Жених и Невеста приглашают вас на свадьбу">
+    <meta property="og:type" content="website">
+
+    <!-- Стили -->
+    <!-- Подключаем разделенные CSS файлы -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/mymain.css">
+    <link rel="stylesheet" href="css/myinv.css">
+    <link rel="stylesheet" href="css/timetable.css">
+    <link rel="stylesheet" href="css/opros.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+<!--    <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Шрифты Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:wght@300;400;600&family=Comfortaa:wght@300;400;700&family=Bad+Script&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="picture/icon.png" rel="shortcut icon">
+</head>
+
+<body>
+<!-- Навигационное меню -->
+<div class="mymenu" style="display:none">
+    <div class="mynav">
+        <a href="#mymain"><i class="fas fa-star"></i> Главная</a>
+        <a href="#myinv"><i class="fas fa-align-center"></i> Приглашение</a>
+        <a href="#timetable"><i class="fas fa-list-ul"></i> Расписание</a>
+<!--        <a href="#opros"><i class="fas fa-poll"></i> Опрос</a>-->
+<!--        <a href="#confirm-section" class="guestAgree"><i class="fas fa-check"></i> Подтвердить</a>-->
+    </div>
+</div>
+
+
+    <!-- Главный экран -->
+    <div id="background-info">
+    <div class="block" id="mymain">
+        <div class="element6">
+            <div class="element6_info">
+                <div class="element_txt">
+                    <div class="textLine wedding-date">17 июля 2026</div>
+                    <div class="textLine groom-name"
+                         th:data-guest="${session.guest}"
+                         th:data-add="${session.add}">
+                    </div>
+                    <div class="textLine invitation-text">
+                        ПРИГЛАШАЕМ ВАС<br>НА НАШУ СВАДЬБУ
+                    </div>
+                    <div class="textLine wedding-time">
+                        ПЯТНИЦА, 16:00 <br> г.Моршанск, кафе"Мега"
+                    </div>
+                    <div class="textLine bride-name">Иван&Ольга</div>
+                    <div class="textLine together-text">
+                        ВМЕСТЕ<br>И НАВСЕГДА
+                    </div>
+                </div>
+                <!-- Таймер обратного отсчета -->
+                <div class="countdown-container">
+                    <div class="countdown-box">
+                        <div id="countdown" class="countdown-timer">
+                            <div class="time-unit">
+                                <span class="number" id="weeks">37</span>
+                                <span class="label">недель</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="number" id="days">03</span>
+                                <span class="label">дней</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="number" id="hours">10</span>
+                                <span class="label">часов</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="number" id="minutes">45</span>
+                                <span class="label">минут</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="number" id="seconds">37</span>
+                                <span class="label">секунд</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="plate_box">
+                <img src="picture/mainPhoto.jpg" class="element1" alt="Тут должны быть мы)">
+            </div>
+        </div>
+    </div>
+<div class="content">
+    <!-- Основное приглашение -->
+    <div class="block" id="myinv" style="padding: 40px 20px;">
+        <div class="element8">
+            <div class="textLine section-title"
+                 th:data-guest="${session.guest}"
+                 th:data-add="${session.add}">
+            </div>
+
+            <div class="textLine description">
+                Мы рады сообщить Вам, что 17.07.2026 состоится самое главное торжество в нашей жизни - день нашей свадьбы!
+                Приглашаем Вас разделить с нами радость этого незабываемого дня.
+            </div>
+
+            <div class="textLine waiting-text">
+                Ждем Вас<br><span class="highlight">17.07.2026 в 16:00<br></span>на торжественном банкете<br>
+                в <span class="highlight">кафе"Мега" г.Моршанск</span>
+            </div>
+
+            <!-- Фотографии -->
+            <div class="photos-container">
+                <div class="photo-item">
+                    <img src="picture/ivan.jpg" alt="Иван">
+                    <div class="photo-name">Иван</div>
+                </div>
+                <div class="photo-item">
+                    <img src="picture/olya.jpg" alt="Ольга">
+                    <div class="photo-name">Ольга</div>
+                </div>
+            </div>
+
+            <!-- Информационные блоки -->
+            <div class="info-sections">
+                <div class="info-section">
+                    <h3>МЕНЮ</h3>
+                    <p>
+                        Если у вас есть какие-либо диетические ограничения, то сообщите молодоженам о таких ограничениях, при подтверждении присутствия.
+                    </p>
+                </div>
+
+<!--                <div class="info-section">-->
+<!--                    <h3>ФОТО</h3>-->
+<!--                    <p>-->
+<!--                        Добавьте фото в общую папку в облаке<br>-->
+<!--                        <a href="https://www.icloud.com/sharedalbum/#B1wJtdOXmNDOwjV" target="_blank" class="cloud-link">-->
+<!--                            https://www.icloud.com/sharedalbum/#B1wJtdOXmNDOwjV-->
+<!--                        </a>-->
+<!--                    </p>-->
+<!--                </div>-->
+
+                <div class="info-section">
+                    <h3>ПРИМЕЧАНИЕ</h3>
+                    <p>
+                        Просим вас придерживаться дресс-кода в бордовых оттенках.
+                    </p>
+                    <div class="color-palette">
+                        <p>Нам будет приятно, если при выборе нарядов на наше торжество вы будете придерживаться следующих оттенков цветов:</p>
+                        <div class="colors">
+                            <div class="color" style="background-color: #900020;"></div>
+                            <div class="color" style="background-color: #770F05;"></div>
+                            <div class="color" style="background-color: #7b0323;"></div>
+                            <div class="color" style="background-color: #7F1734;"></div>
+                            <div class="color" style="background-color: #730F17;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>ПОДТВЕРЖДЕНИЕ</h3>
+                    <p>
+                        Пожалуйста подтвердите свое присутствие до 01.06.2026
+                    </p>
+                    <div class="confirmation-section" id="confirm-section">
+                        <button class="guestAgree" onclick="showConfirmation()">
+                            <i class="fas fa-check"></i> Подтвердить участие
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Палитра цветов -->
+
+            <!-- Кнопка подтверждения -->
+
+        </div>
+    </div>
+
+    <!-- Расписание -->
+    <div class="block" id="timetable" style="display:none">
+        <div class="timetable-wrapper">
+            <div class="element8">
+                <div class="textLine section-title">Свадебное расписание</div>
+
+                <div class="events-container">
+                    <!-- Событие 1 -->
+<!--                    <div class="event-item">-->
+<!--                        <div class="event-time">-->
+<!--                            <span class="time">11:30</span>-->
+<!--                            <span class="date">17.07.2026</span>-->
+<!--                        </div>-->
+<!--                        <div class="event-details">-->
+<!--                            <h4>Торжественная роспись</h4>-->
+<!--                            <p class="event-location">ЗАГС</p>-->
+<!--                            <p class="event-description">Приглашаем вас разделить вместе с нами радость создания новой семьи.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Событие 2 &ndash;&gt;-->
+<!--                    <div class="event-item">-->
+<!--                        <div class="event-time">-->
+<!--                            <span class="time">12:00</span>-->
+<!--                            <span class="date">17.07.2026</span>-->
+<!--                        </div>-->
+<!--                        <div class="event-details">-->
+<!--                            <h4>Фуршет</h4>-->
+<!--                            <p class="event-location">Фуршет в ЗАГСе</p>-->
+<!--                            <p class="event-description">После росписи будет организован фуршет</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Событие 3 &ndash;&gt;-->
+<!--                    <div class="event-item">-->
+<!--                        <div class="event-time">-->
+<!--                            <span class="time">12:30</span>-->
+<!--                            <span class="date">17.07.2026</span>-->
+<!--                        </div>-->
+<!--                        <div class="event-details">-->
+<!--                            <h4>Фотосессия</h4>-->
+<!--                            <p class="event-location">Свадебная фотосессия</p>-->
+<!--                            <p class="event-description">После росписи будет организованна свадебная фотосессия для молодоженов и гостей</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    &lt;!&ndash; Событие 4 &ndash;&gt;-->
+<!--                    <div class="event-item">-->
+<!--                        <div class="event-time">-->
+<!--                            <span class="time">16:00</span>-->
+<!--                            <span class="date">17.07.2026</span>-->
+<!--                        </div>-->
+<!--                        <div class="event-details">-->
+<!--                            <h4>Банкет</h4>-->
+<!--                            <p class="event-location">Банкетный зал</p>-->
+<!--                            <p class="event-description">Торжественный ужин и празднование.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    &lt;!&ndash; Опрос &ndash;&gt;-->
+<!--    <div class="block" id="opros">-->
+<!--        <div class="element8">-->
+<!--            <div class="textLine section-title">Опрос</div>-->
+<!--            <p class="survey-intro">Пожалуйста, ответьте на вопросы, которые для вас подготовили <b>Иван</b> и <b>Ольга</b>:</p>-->
+
+<!--            <div class="survey-container">-->
+<!--                &lt;!&ndash; Вопрос 1 &ndash;&gt;-->
+<!--                <div class="question-item">-->
+<!--                    <h4>Потребуется ли вам трансфер?</h4>-->
+<!--                    <div class="options">-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="transfer" value="no">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Нет-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="transfer" value="before">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Только до торжества-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="transfer" value="after">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Только после торжества-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="transfer" value="both">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            До и после торжества-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Вопрос 2 &ndash;&gt;-->
+<!--                <div class="question-item">-->
+<!--                    <h4>Есть ли у вас особые предпочтения по еде?</h4>-->
+<!--                    <div class="options">-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="food" value="none">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Нет-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="food" value="no-meat">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Не ем мясо-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="food" value="no-fish">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Не ем рыбу-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="food" value="vegetarian">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Вегетарианец-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Вопрос 3 &ndash;&gt;-->
+<!--                <div class="question-item">-->
+<!--                    <h4>Какой алкоголь вы предпочитаете?</h4>-->
+<!--                    <div class="options">-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="red-wine">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Красное вино-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="white-wine">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Белое вино-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="champagne">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Шампанское-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="whiskey">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Виски/коньяк-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="vodka">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Водка-->
+<!--                        </label>-->
+<!--                        <label class="option">-->
+<!--                            <input type="checkbox" name="alcohol" value="none">-->
+<!--                            <span class="checkmark"></span>-->
+<!--                            Не буду пить алкоголь-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <button class="submit-survey" onclick="submitSurvey()">-->
+<!--                    <i class="fas fa-paper-plane"></i> Отправить ответы-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    </div>
+    <!-- Подвал -->
+    <div class="block" id="footer">
+        <div class="footer-content">
+            <div class="couple-names">Иван & Ольга</div>
+            <div class="wedding-date-footer">17 июля 2026</div>
+            <div class="copyright">© 2026 С любовью для вас</div>
+<!--            <div class="add-to-calendar">-->
+<!--                <a href="#" class="calendar-link" onclick="addToCalendar()">-->
+<!--                    <i class="far fa-calendar-plus"></i> Добавить в календарь-->
+<!--                </a>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно подтверждения -->
+<div id="confirmationModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Спасибо за подтверждение!</h3>
+            <button class="close-modal" onclick="hideConfirmation()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="success-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+
+            <p>
+                Спасибо, что подтвердите свое присутствие, связаться с молодоженами вы можете по ссылкам ниже<br>
+            </p>
+            <!-- БЛОК СОЦСЕТЕЙ -->
+            <div class="social-block">
+                <div class="social-section groom">
+                    <p class="social-title">Жених:</p>
+                    <div class="social-links">
+                        <a href="https://t.me/midez3" target="_blank" class="social telegram">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="https://vk.com/midez3" target="_blank" class="social vk">
+                            <i class="fab fa-vk"></i> ВКонтакте
+                        </a>
+                        <a href="https://instagram.com/m.dez3" target="_blank" class="social insta"
+                           title="Признаны экстремистскими организациями и запрещены на территории РФ.">
+                            <i class="fab fa-instagram"></i> Instagram*
+                        </a>
+                    </div>
+                </div>
+
+                <div class="social-section bride">
+                    <p class="social-title">Невеста:</p>
+                    <div class="social-links">
+                        <a href="https://t.me/myolyyy" target="_blank" class="social telegram">
+                            <i class="fab fa-telegram"></i> Telegram
+                        </a>
+                        <a href="https://vk.com/myolyyy" target="_blank" class="social vk">
+                            <i class="fab fa-vk"></i> ВКонтакте
+                        </a>
+                        <a href="https://instagram.com/myolyyy" target="_blank" class="social insta"
+                           title="Признаны экстремистскими организациями и запрещены на территории РФ.">
+                            <i class="fab fa-instagram"></i> Instagram*
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Скрипты -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<!--<script src="js/timer.js"></script>-->
+<script type="module" src="js/main.js"></script>
+<script>
+    function showConfirmation() {
+        document.getElementById('confirmationModal').classList.add('show');
+    }
+
+    function hideConfirmation() {
+        document.getElementById('confirmationModal').classList.remove('show');
+    }
+
+</script>
+</body>
+</html>

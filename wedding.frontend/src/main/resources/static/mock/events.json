@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "type": "registry",
+    "order": 1,
+    "time": "11:30",
+    "date": "2026-07-17",
+    "title": "Торжественная роспись",
+    "location": "ЗАГС",
+    "description": "Приглашаем вас разделить вместе с нами радость создания новой семьи.",
+    "guestOnly": true
+  },
+  {
+    "id": 2,
+    "type": "buffet",
+    "order": 2,
+    "time": "12:00",
+    "date": "2026-07-17",
+    "title": "Фуршет",
+    "location": "Фуршет в ЗАГСе",
+    "description": "После росписи будет организован фуршет.",
+    "guestOnly": true
+  },
+  {
+    "id": 3,
+    "type": "photo",
+    "order": 3,
+    "time": "12:30",
+    "date": "2026-07-17",
+    "title": "Фотосессия",
+    "location": "Свадебная фотосессия",
+    "description": "Свадебная фотосессия для молодоженов и гостей.",
+    "guestOnly": false
+  },
+  {
+    "id": 4,
+    "type": "banquet",
+    "order": 4,
+    "time": "16:00",
+    "date": "2026-07-17",
+    "title": "Банкет",
+    "location": "Банкетный зал",
+    "description": "Торжественный ужин и празднование.",
+    "guestOnly": false
+  }
+]

@@ -1,0 +1,42 @@
+services:
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+    networks:
+      - app_network
+
+  frontend:
+    build:
+      context: ./wedding.frontend
+      dockerfile: ./Dockerfile
+    restart: always
+    expose:
+      - "9090"
+    networks:
+      - app_network
+
+  3xui:
+    build:
+      context: ./3x-ui-main
+      dockerfile: ./Dockerfile
+    container_name: 3xui_app
+    # hostname: yourhostname <- optional
+    volumes:
+      - $PWD/db/:/etc/x-ui/
+      - $PWD/cert/:/root/cert/
+    environment:
+      XRAY_VMESS_AEAD_FORCED: "false"
+      XUI_ENABLE_FAIL2BAN: "true"
+    tty: true
+    network_mode: host
+    restart: unless-stopped
+
+networks:
+  app_network:

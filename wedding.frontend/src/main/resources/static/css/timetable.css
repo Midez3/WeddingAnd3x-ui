@@ -1,0 +1,77 @@
+/* Расписание */
+
+#timetable {
+    padding: 80px 20px;
+    background: #f0f0f0;
+}
+
+.timetable-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.events-container {
+    margin-top: 40px;
+}
+
+.event-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.event-time {
+    min-width: 120px;
+    text-align: center;
+    padding: 15px;
+    background: #bfcfba;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-time .time {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Comfortaa', cursive;
+}
+
+.event-time .date {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+.event-details {
+    flex: 1;
+}
+
+.event-details h4 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-family: 'Comfortaa', cursive;
+}
+
+.event-location {
+    color: #8b4513;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.event-description {
+    color: black;
+    line-height: 1.6;
+}
