@@ -1,47 +1,36 @@
 version: "3.9"
 
 services:
+  frontend:
+    image: your-frontend-image
+    container_name: weddingand3x-ui-frontend-1
+    ports:
+      - "9090:9090"
+    networks:
+      - app_network
+
+  xui:
+    image: your-xui-image
+    container_name: weddingand3x-ui-xui-1
+    ports:
+      - "45000:45000"
+    networks:
+      - app_network
 
   nginx:
-    image: nginx:alpine
+    image: nginx:latest
     container_name: nginx
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
-      - ./certbot/www:/var/www/certbot
     depends_on:
       - frontend
+      - xui
     networks:
       - app_network
-    restart: unless-stopped
-
-  frontend:
-    build:
-      context: ./wedding.frontend
-      dockerfile: Dockerfile
-    restart: always
-    expose:
-      - "9090"
-    networks:
-      - app_network
-
-#  xui:
-#    build:
-#      context: ./3x-ui-main
-#      dockerfile: Dockerfile
-#    container_name: 3xui_app
-#    volumes:
-#      - ./db/:/etc/x-ui/
-#      - ./cert/:/root/cert/
-#    environment:
-#      XRAY_VMESS_AEAD_FORCED: "false"
-#      XUI_ENABLE_FAIL2BAN: "true"
-#    tty: true
-#    network_mode: host
-#    restart: unless-stopped
 
 networks:
   app_network:
