@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   frontend:
-    image: your-frontend-image
+    build:
+      context: ./frontend   # путь к папке с Dockerfile фронтенда
+      dockerfile: Dockerfile
     container_name: weddingand3x-ui-frontend-1
     ports:
       - "9090:9090"
