@@ -9,13 +9,13 @@ services:
     networks:
       - app_network
 
-  xui:
-    image: your-xui-image
-    container_name: weddingand3x-ui-xui-1
-    ports:
-      - "45000:45000"
-    networks:
-      - app_network
+#  xui:
+#    image: your-xui-image
+#    container_name: weddingand3x-ui-xui-1
+#    ports:
+#      - "45000:45000"
+#    networks:
+#      - app_network
 
   nginx:
     image: nginx:latest
