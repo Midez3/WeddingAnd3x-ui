@@ -28,7 +28,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - frontend
-      - xui
+#      - xui
     networks:
       - app_network
 
