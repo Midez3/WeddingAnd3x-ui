@@ -333,7 +333,7 @@
     }
 }
 
-@media (max-width: 383px) {
+@media (max-width: 405px) {
     .countdown-timer {
         gap: 6px;
     }
