@@ -139,6 +139,20 @@ function adjustCountdownLayout() {
     const width = window.innerWidth;
 
     switch (true) {
+        
+        /* // <= 405px
+        case width <= 405:
+            countdownTimer.style.gap = '6px';
+            document.querySelectorAll('.time-unit').forEach(unit => {
+                unit.style.minWidth = '40px';
+            });
+            document.querySelectorAll('.time-unit .number').forEach(num => {
+                num.style.fontSize = '15px';
+            });
+            document.querySelectorAll('.time-unit .label').forEach(label => {
+                label.style.fontSize = '9px';
+            });
+            break;
 
         // <= 480px
         case width <= 480:
@@ -185,7 +199,7 @@ function adjustCountdownLayout() {
             document.querySelectorAll('.time-unit .number').forEach(num => {
                 num.style.fontSize = '30px';
             });
-            break;
+            break;*/
     }
 }
 
