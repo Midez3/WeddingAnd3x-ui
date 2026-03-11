@@ -5,6 +5,11 @@ export function adjustCountdownLayout() {
     const width = window.innerWidth;
 
     switch (true) {
+        // <= 405px
+        case width <= 405:
+            countdownTimer.style.gap = '6px';
+            setUnits(40,15,9);
+            break;
         case width <= 480:
             timer.style.gap = '8px';
             setUnits(45, 20, 11);
