@@ -140,7 +140,7 @@ function adjustCountdownLayout() {
 
     switch (true) {
         
-        /* // <= 405px
+        // <= 405px
         case width <= 405:
             countdownTimer.style.gap = '6px';
             document.querySelectorAll('.time-unit').forEach(unit => {
@@ -199,7 +199,7 @@ function adjustCountdownLayout() {
             document.querySelectorAll('.time-unit .number').forEach(num => {
                 num.style.fontSize = '30px';
             });
-            break;*/
+            break;
     }
 }
 
