@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const add = block.dataset.add;
 
     const text = [guest, add].filter(v => v && v.trim()).join(' и ');
-
+    
+    block2.style.fontWeight = "bold";
     if (text) {
         block.textContent = text;
         block2.textContent = text;
