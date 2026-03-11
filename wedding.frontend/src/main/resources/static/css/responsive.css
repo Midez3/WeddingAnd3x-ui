@@ -20,7 +20,7 @@
     .element6 {
         padding: 70px 4% 40px;
         background-position: top center; /* Центрируем */
-        background-size: cover; /* Изображение полностью видно, не обрезается */
+        background-size: contain; /* Изображение полностью видно, не обрезается */
         background-repeat: no-repeat; /* Не повторяем изображение */
         background-image: url('../picture/mainPhoto.jpg');
         background-color: #bfcfba; /* Фоновый цвет, если изображение не заполняет весь экран */
