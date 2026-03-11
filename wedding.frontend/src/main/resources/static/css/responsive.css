@@ -16,7 +16,7 @@
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 800px) {
     .element6 {
         padding: 70px 4% 40px;
         background-position: top center; /* Центрируем */
@@ -144,7 +144,7 @@
 @media (max-width: 576px) {
     .element6 {
         padding: 50px 15px 20px;
-        background-position: 60% center;
+        /*background-position: 60% center;*/
     }
 
     .plate_box, .element_txt {
